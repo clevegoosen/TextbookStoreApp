@@ -56,3 +56,5 @@ fun TextbookStoreAppTheme(
         content = content
     )
 }
+
+//  App appearance theme for better user experience
