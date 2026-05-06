@@ -31,3 +31,5 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
+
+// Handles secure user authentication and login validation for the Textbook Store App
