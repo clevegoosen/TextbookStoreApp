@@ -27,3 +27,5 @@ class EnquiryActivity : AppCompatActivity() {
         }
     }
 }
+
+// Handles user enquiries and validates form submissions for textbook requests
