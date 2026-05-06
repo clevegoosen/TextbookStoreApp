@@ -24,3 +24,5 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 }
+
+// Shows detailed textbook information selected from the main listing
