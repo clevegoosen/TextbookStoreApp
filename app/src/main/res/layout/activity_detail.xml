@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@color/background_cream">
+
+    <ImageView
+        android:id="@+id/ivBookCover"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tvDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/african_ochre"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvDetailPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R500"
+        android:textSize="20sp"
+        android:textColor="@color/african_savanna_green"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnEnquire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enquire"
+        android:backgroundTint="@color/african_savanna_green"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
