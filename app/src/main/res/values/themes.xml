@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TextbookStoreApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/african_ochre</item>
+        <item name="colorPrimaryDark">@color/african_clay</item>
+        <item name="colorAccent">@color/african_deep_gold</item>
+    </style>
+</resources>
