@@ -41,3 +41,5 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 }
+
+// Displays textbook listings and serves as the main navigation screen of the app
