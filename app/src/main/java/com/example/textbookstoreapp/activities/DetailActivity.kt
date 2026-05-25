@@ -2,27 +2,37 @@ package com.example.textbookstoreapp.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.textbookstoreapp.R
+import com.example.textbookstoreapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
 
-        val title = intent.getStringExtra("BOOK_TITLE") ?: "Book Title"
-        val price = intent.getStringExtra("BOOK_PRICE") ?: "R0"
+        val title = intent.getStringExtra("BOOK_TITLE") ?: "N/A"
+        val author = intent.getStringExtra("BOOK_AUTHOR") ?: "N/A"
+        val edition = intent.getStringExtra("BOOK_EDITION") ?: "N/A"
+        val price = intent.getStringExtra("BOOK_PRICE") ?: "N/A"
+        val description = intent.getStringExtra("BOOK_DESCRIPTION") ?: "No description available."
+        val imageResId = intent.getIntExtra("BOOK_IMAGE", R.drawable.ic_launcher_background)
 
-        findViewById<TextView>(R.id.tvDetailTitle).text = title
-        findViewById<TextView>(R.id.tvDetailPrice).text = price
+        binding.tvDetailTitle.text = title
+        binding.tvDetailAuthor.text = author
+        binding.tvDetailEdition.text = "Edition: $edition"
+        binding.tvDetailPrice.text = price
+        binding.tvDetailDescription.text = description
+        binding.ivBookDetail.setImageResource(imageResId)
 
-        findViewById<Button>(R.id.btnEnquire).setOnClickListener {
+        binding.btnContactSeller.setOnClickListener {
             val intent = Intent(this, EnquiryActivity::class.java)
+            intent.putExtra("BOOK_TITLE", title)
             startActivity(intent)
         }
     }
 }
-
-// Shows detailed textbook information selected from the main listing

@@ -2,39 +2,44 @@ package com.example.textbookstoreapp.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.textbookstoreapp.R
 import com.example.textbookstoreapp.activities.DetailActivity
+import com.example.textbookstoreapp.databinding.ItemBookBinding
 import com.example.textbookstoreapp.models.Book
 
 class BookAdapter(private var bookList: List<Book>) :
-    RecyclerView.Adapter<BookAdapter.ViewHolder>() {
+    RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val title = view.findViewById<TextView>(R.id.tvTitle)
-        val price = view.findViewById<TextView>(R.id.tvPrice)
+    class BookViewHolder(val binding: ItemBookBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(book: Book) {
+            binding.book = book
+            binding.executePendingBindings()
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_book, parent, false)
-        return ViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+            .inflate(com.example.textbookstoreapp.R.layout.item_book, parent, false)
+        val binding = ItemBookBinding.bind(layoutInflater)
+        return BookViewHolder(binding)
     }
 
     override fun getItemCount() = bookList.size
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = bookList[position]
-        holder.title.text = book.title
-        holder.price.text = book.price
+        holder.bind(book)
+        holder.binding.ivBookItem.setImageResource(book.imageResId)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
             intent.putExtra("BOOK_TITLE", book.title)
+            intent.putExtra("BOOK_AUTHOR", book.author)
+            intent.putExtra("BOOK_EDITION", book.edition)
             intent.putExtra("BOOK_PRICE", book.price)
+            intent.putExtra("BOOK_DESCRIPTION", book.description)
+            intent.putExtra("BOOK_IMAGE", book.imageResId)
             holder.itemView.context.startActivity(intent)
         }
     }

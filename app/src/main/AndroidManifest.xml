@@ -23,16 +23,32 @@
         </activity>
 
         <activity
+            android:name=".activities.RegisterActivity"
+            android:label="Register" />
+
+        <activity
             android:name=".activities.HomeActivity"
             android:label="Home" />
+
+        <activity
+            android:name=".activities.SearchActivity"
+            android:label="Search Books" />
 
         <activity
             android:name=".activities.DetailActivity"
             android:label="Book Details" />
 
         <activity
+            android:name=".activities.ListBookActivity"
+            android:label="List Your Book" />
+
+        <activity
             android:name=".activities.EnquiryActivity"
-            android:label="Book Enquiry" />
+            android:label="Contact Seller" />
+
+        <activity
+            android:name=".activities.MessagesActivity"
+            android:label="Messages" />
 
     </application>
 

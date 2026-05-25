@@ -1,21 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/background_cream">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/etSearch"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search books"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@color/background_cream">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Textbook Store"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/african_ochre"
+            android:layout_marginBottom="32dp"/>
 
-</LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+            <Button
+                android:id="@+id/btnSearchBooks"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Browse Textbooks"
+                android:textSize="18sp"
+                android:backgroundTint="@color/african_savanna_green"
+                android:textColor="@android:color/white"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+            <Button
+                android:id="@+id/btnListBook"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="List Your Book"
+                android:textSize="18sp"
+                android:backgroundTint="@color/african_ochre"
+                android:textColor="@android:color/white"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+            <Button
+                android:id="@+id/btnMessages"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="My Messages"
+                android:textSize="18sp"
+                android:backgroundTint="@color/african_clay"
+                android:textColor="@android:color/white"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

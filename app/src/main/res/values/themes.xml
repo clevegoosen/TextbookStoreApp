@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
     <style name="Theme.TextbookStoreApp" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/african_ochre</item>
         <item name="colorPrimaryDark">@color/african_clay</item>
-        <item name="colorAccent">@color/african_deep_gold</item>
+        <item name="colorAccent">@color/african_savanna_green</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/african_ochre</item>
     </style>
 </resources>

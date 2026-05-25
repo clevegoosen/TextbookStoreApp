@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- African Cultural Aesthetics Palette -->
-    <color name="african_ochre">#CC7722</color>
-    <color name="african_terracotta">#E2725B</color>
-    <color name="african_savanna_green">#4B5320</color>
-    <color name="african_deep_gold">#CFB53B</color>
-    <color name="african_clay">#B66A50</color>
-    <color name="african_ebony">#282C34</color>
-    <color name="background_cream">#FFF5E1</color>
-
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- African Inspired Palette -->
+    <color name="african_ochre">#CC7722</color> <!-- Earthy Orange/Brown -->
+    <color name="african_savanna_green">#4B5320</color> <!-- Olive Drab -->
+    <color name="background_cream">#FFF5E1</color> <!-- Warm Cream -->
+    <color name="african_clay">#A0522D</color> <!-- Sienna -->
+    <color name="african_ebony">#282C34</color> <!-- Dark Grey/Black -->
 </resources>

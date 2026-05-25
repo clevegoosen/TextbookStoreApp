@@ -1,31 +1,31 @@
 package com.example.textbookstoreapp.activities
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.textbookstoreapp.R
+import com.example.textbookstoreapp.databinding.ActivityEnquiryBinding
 
 class EnquiryActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityEnquiryBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_enquiry)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_enquiry)
 
-        val etName = findViewById<EditText>(R.id.etStudentName)
-        val btnSubmit = findViewById<Button>(R.id.btnSubmitEnquiry)
+        val bookTitle = intent.getStringExtra("BOOK_TITLE") ?: "Unknown Book"
+        binding.tvEnquiryHeader.text = "Enquiry for: $bookTitle"
 
-        btnSubmit.setOnClickListener {
-            val name = etName.text.toString()
-            if (name.isEmpty()) {
-                etName.error = "Required"
+        binding.btnSendMessage.setOnClickListener {
+            val message = binding.etUserMessage.text.toString()
+            if (message.isBlank()) {
+                Toast.makeText(this, "Please enter a message", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Enquiry submitted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Message sent to seller!", Toast.LENGTH_LONG).show()
                 finish()
             }
         }
     }
 }
-
-// Handles user enquiries and validates form submissions for textbook requests
